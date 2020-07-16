@@ -4,7 +4,7 @@ const signUpSuccess = function (response) {
   $('form').trigger('reset')
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function () {
   $('#message').text('Please try again.')
   $('form').trigger('reset')
 }
@@ -14,7 +14,17 @@ const signInSuccess = function (response) {
   $('form').trigger('reset')
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
+  $('#message').text('Please try again.')
+  $('form').trigger('reset')
+}
+
+const changePasswordSuccess = function (response) {
+  $('#message').text('Your password has been changed.')
+  $('form').trigger('reset')
+}
+
+const changePasswordFailure = function () {
   $('#message').text('Please try again.')
   $('form').trigger('reset')
 }
@@ -23,5 +33,7 @@ module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
