@@ -7,6 +7,5 @@
 // require('./example')
 
 $(() => {
-
-$('#sign-up').on('submit'.onSignUp)
+  $('#sign-up').on('submit'.onSignUp)
 })

@@ -6,7 +6,7 @@ const signUpFailure = function () {
   $('#message').text('Please try again.')
 }
 
-module.exports{
+module.exports = {
   signUpSuccess,
   signUpFailure
 }
