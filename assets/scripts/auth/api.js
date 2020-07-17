@@ -34,7 +34,7 @@ const signOut = function (formData) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + 'sign-out',
+    url: config.apiUrl + '/sign-out',
     method: 'DELETE'
   })
 }
