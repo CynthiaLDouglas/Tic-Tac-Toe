@@ -1,3 +1,4 @@
+const store = require('../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('You are all signed up! Try Signing In.')
@@ -12,6 +13,7 @@ const signUpFailure = function () {
 const signInSuccess = function (response) {
   $('#message').text('You are all signed in! Ready to Play?')
   $('form').trigger('reset')
+  store.user = response.user
 }
 
 const signInFailure = function () {
@@ -26,7 +28,15 @@ const changePasswordSuccess = function (response) {
 
 const changePasswordFailure = function () {
   $('#message').text('Please try again.')
+}
+
+const signOutSuccess = function (response) {
+  $('#message').text('You are signed out.')
   $('form').trigger('reset')
+}
+
+const signOutFailure = function () {
+  $('#message').text('Please try again.')
 }
 
 module.exports = {
@@ -34,6 +44,8 @@ module.exports = {
   signUpFailure,
   signInSuccess,
   signInFailure,
+  signOutSuccess,
+  signOutFailure,
   changePasswordSuccess,
   changePasswordFailure
 }
