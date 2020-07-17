@@ -29,7 +29,7 @@ const changePassword = function (formData) {
   })
 }
 
-const signOut = function (formData) {
+const signOut = function () {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token

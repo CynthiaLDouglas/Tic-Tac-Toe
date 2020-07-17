@@ -2,18 +2,20 @@ const store = require('../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('You are all signed up! Try Signing In.')
-  $('form').trigger('reset')
+  $('#authenticated').show()
+  $('#unauthenticated').hide()
 }
 
 const signUpFailure = function () {
   $('#message').text('Please try again.')
-  $('form').trigger('reset')
 }
 
 const signInSuccess = function (response) {
   $('#message').text('You are all signed in! Ready to Play?')
   $('form').trigger('reset')
   store.user = response.user
+  $('#authenticated').show()
+  $('#unauthenticated').hide()
 }
 
 const signInFailure = function () {
@@ -32,7 +34,8 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function (response) {
   $('#message').text('You are signed out.')
-  $('form').trigger('reset')
+  $('#unauthenticated').show()
+  $('#authenticated').hide()
 }
 
 const signOutFailure = function () {

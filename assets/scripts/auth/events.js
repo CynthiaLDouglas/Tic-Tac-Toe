@@ -26,7 +26,7 @@ const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log('formData is', formData)
+  //  console.log('formData is', formData)
 
   api.changePassword(formData)
     .then(ui.changePasswordSuccess)

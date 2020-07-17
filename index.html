@@ -16,49 +16,54 @@
 
       <h1>Tic - Tac - Toe</h1>
       <p id="message"></p>
-      <div>Sign Up Here:
-        <form id="sign-up">
-          <input name="credentials[email]" type="text" placeholder="your email here">
-          <input name="credentials[password]" type="text" placeholder="your password here">
-          <input name="credentials[password_confirmation]" placeholder="retype password" type="password">
-          <button type="submit">Sign Up!</button>
-        </form>
+      <div id="unauthenticated">
+        <div>Sign Up Here:
+          <form id="sign-up">
+            <input name="credentials[email]" type="text" placeholder="your email here">
+            <input name="credentials[password]" type="text" placeholder="your password here">
+            <input name="credentials[password_confirmation]" placeholder="retype password" type="password">
+            <button type="submit">Sign Up!</button>
+          </form>
+        </div>
+
+        <div>Sign In Here:
+          <form id="sign-in">
+            <input name="credentials[email]" type="text" placeholder="your email here">
+            <input name="credentials[password]" type="password" placeholder="your password here">
+            <button type="submit">Sign In!</button>
+          </form>
+        </div>
       </div>
 
-      <div>Sign In Here:
-        <form id="sign-in">
-          <input name="credentials[email]" type="text" placeholder="your email here">
-          <input name="credentials[password]" type="password" placeholder="your password here">
-          <button type="submit">Sign In!</button>
-        </form>
-      </div>
+    <div id="authenticated">
+        <div>Change Your Password:
+          <form id="change-password">
+            <input name="passwords[old]" type="password" placeholder="your old password here">
+            <input name="passwords[new]" type="password" placeholder="your new password here">
+            <button type="submit">Change Your Password!</button>
+          </form>
+        </div>
 
-      <div>Change Your Password:
-        <form id="change-password">
-          <input name="passwords[old]" type="password" placeholder="your old password here">
-          <input name="passwords[new]" type="password" placeholder="your new password here">
-          <button type="submit">Change Your Password!</button>
-        </form>
-      </div>
+        <div>Sign Out:
+          <form id="sign-out">
+            <button type="submit">Sign Out!</button>
+          </form>
+        </div>
 
-      <div>Sign Out:
-        <form id="sign-out">
-          <button type="submit">Sign Out!</button>
-        </form>
-      </div>
 
-      <div id="board" style="background-color:grey">
-        <p>Game Board Here</p>
-        <div class="cell" id="0"></div>
-        <div class="cell" id="1"></div>
-        <div class="cell" id="2"></div>
-        <div class="cell" id="3"></div>
-        <div class="cell" id="4"></div>
-        <div class="cell" id="5"></div>
-        <div class="cell" id="6"></div>
-        <div class="cell" id="7"></div>
-        <div class="cell" id="8"></div>
-      </div>
+        <div id="board" style="background-color:grey">
+          <p>Game Board Here</p>
+          <div class="cell" id="0" style="background-color:red">0</div>
+          <div class="cell" id="1" style="background-color:red">1</div>
+          <div class="cell" id="2" style="background-color:red">2</div>
+          <div class="cell" id="3" style="background-color:blue">3</div>
+          <div class="cell" id="4" style="background-color:blue">4</div>
+          <div class="cell" id="5" style="background-color:blue">5</div>
+          <div class="cell" id="6" style="background-color:green">6</div>
+          <div class="cell" id="7" style="background-color:green">7</div>
+          <div class="cell" id="8" style="background-color:green">8</div>
+        </div>
+    </div>
 
     </body>
 </html>
