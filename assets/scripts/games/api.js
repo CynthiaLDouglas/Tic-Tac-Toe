@@ -1,12 +1,13 @@
 const config = require('../config')
+const store = require('../store')
 
-const makeMove = function (formData) {
+const newGame = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
-    method: 'POST',
+    method: 'POST'
   })
 }
 
 module.exports = {
-  makeMove
+  newGame
 }

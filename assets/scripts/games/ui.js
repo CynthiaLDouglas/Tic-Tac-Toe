@@ -1,12 +1,12 @@
-const makeMoveSuccess = function (response) {
+const newGameSuccess = function (response) {
   $('#message').text('it worked')
 }
 
-const makeMoveFailure = function () {
+const newGameFailure = function () {
   $('#message').text('try again.')
 }
 
 module.exports = {
-  makeMoveSuccess,
-  makeMoveFailure
+  newGameSuccess,
+  newGameFailure
 }
