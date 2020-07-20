@@ -1,13 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
 
+
 #authenticated {
   display: none
 }
 
-#board {
-  align-content: stretch;
-  align-items: center;
-  display: flex;
-  max-height: 100%;
-  max-width: 100%;
+#gamearea {
+  background-color: blue;
+  display: none;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  height: 600px;
+}
+
+.cell {
+  display: inline-block;
+  width: 30%;
+  height: 185px;
+  border: 5px solid black;
 }
