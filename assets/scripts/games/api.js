@@ -11,14 +11,22 @@ const newGame = function () {
   })
 }
 
-const onClick = function (cellInfo) {
+const onClick = function (index, value) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
     method: 'PATCH',
-    data: cellInfo
+    data: {
+      game: {
+        cells: {
+          index: index,
+          value: value
+        },
+        over: false
+      }
+    }
   })
 }
 

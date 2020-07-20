@@ -1,11 +1,10 @@
 const store = require('../store')
-let turn = true
+//  let turn = true
 
 const newGameSuccess = function (response) {
   $('#gamearea').show()
   $('#start-game').hide()
   store.game = response.game
-  console.log(response)
 }
 
 const newGameFailure = function () {
@@ -15,16 +14,23 @@ const newGameFailure = function () {
 }
 
 const clickSuccess = function (response) {
-  console.log(response)
-  const player = turn ? 'x' : 'o'
-  console.log(player)
-//   for (i = 0; i < response.game.cells.length; i++){
-//   $('.cell')[i].text = response.game.cells[i]
-// }
+  store.game = response.game
+  $(event.target).text('X')
+      // if (response.game === store.player[0]) {
+      //   $('.cell')[index].text('X')
+      // } else if (response.game !== store.player[0]) {
+      //   console.log('O')
+      // }
 }
 
+  // if (response.game = store.player[0]) {
+  //   $('.cell').text('X')
+  // } else if (response.game !== store.player[0]) {
+  //   console.log('O')
+  // }
+
 const clickFailure = function () {
-  $('message').text('Try Again')
+  $('#message').text('It\'s not your turn.')
 }
 
 module.exports = {
