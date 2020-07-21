@@ -8,6 +8,13 @@ const newGame = function () {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
+    // ,
+    // data: {
+    //   game: {
+    //     cells: ['', '', '', '', '', '', '', '', ''],
+    //     over: false
+    //   }
+    // }
   })
 }
 
@@ -20,7 +27,7 @@ const onClick = function (index, value) {
     method: 'PATCH',
     data: {
       game: {
-        cells: {
+        cell: {
           index: index,
           value: value
         },

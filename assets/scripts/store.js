@@ -1,9 +1,11 @@
 'use strict'
 
 const store = {}
-const player = ['X', 'O']
+const player = 'X'
+const currentBox = {}
 
 module.exports = {
   store,
-  player
+  player,
+  currentBox
 }

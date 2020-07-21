@@ -1,5 +1,4 @@
 const store = require('../store')
-//  let turn = true
 
 const newGameSuccess = function (response) {
   $('#gamearea').show()
@@ -15,19 +14,9 @@ const newGameFailure = function () {
 
 const clickSuccess = function (response) {
   store.game = response.game
-  $(event.target).text('X')
-      // if (response.game === store.player[0]) {
-      //   $('.cell')[index].text('X')
-      // } else if (response.game !== store.player[0]) {
-      //   console.log('O')
-      // }
-}
+  $(store.currentBox).text(store.player)
 
-  // if (response.game = store.player[0]) {
-  //   $('.cell').text('X')
-  // } else if (response.game !== store.player[0]) {
-  //   console.log('O')
-  // }
+}
 
 const clickFailure = function () {
   $('#message').text('It\'s not your turn.')

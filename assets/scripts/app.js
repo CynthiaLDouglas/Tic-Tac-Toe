@@ -15,5 +15,5 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#start-game').on('click', boardEvents.createNewGame)
   $('.cell').on('click', boardEvents.onSelect)
+  $('#update-game').on('click', boardEvents.onUpdateGame)
 })
-console.log(boardEvents)
