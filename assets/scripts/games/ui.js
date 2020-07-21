@@ -1,9 +1,10 @@
 const store = require('../store')
 
 const newGameSuccess = function (response) {
+  store.game = response.game
   $('#gamearea').show()
   $('#start-game').hide()
-  store.game = response.game
+  $('#message').text('Time to play!')
 }
 
 const newGameFailure = function () {
@@ -15,7 +16,7 @@ const newGameFailure = function () {
 const clickSuccess = function (response) {
   store.game = response.game
   $(store.currentBox).text(store.player)
-
+  $('#message').text(`You played ${store.player}`)
 }
 
 const clickFailure = function () {

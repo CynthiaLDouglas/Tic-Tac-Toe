@@ -2,6 +2,7 @@
 
 const authEvents = require('./auth/events')
 const boardEvents = require('./games/events')
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -15,5 +16,4 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#start-game').on('click', boardEvents.createNewGame)
   $('.cell').on('click', boardEvents.onSelect)
-  $('#update-game').on('click', boardEvents.onUpdateGame)
 })

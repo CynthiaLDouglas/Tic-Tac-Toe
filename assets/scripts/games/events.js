@@ -15,6 +15,7 @@ const onSelect = function (event) {
   store.currentBox = event.target
   const cellIndex = $(store.currentBox).data('index')
   if ($(store.currentBox).text() === '') {
+
     const choiceValue = function (choice) {
       if (choice === 'X') {
         store.player = 'O'
@@ -24,6 +25,7 @@ const onSelect = function (event) {
       return store.player
     }
     const cellValue = choiceValue(store.player)
+
     api.onClick(cellIndex, cellValue)
       .then(ui.clickSuccess)
       .catch(ui.clickFailure)
@@ -36,3 +38,8 @@ module.exports = {
   createNewGame,
   onSelect
 }
+// if ('<what can I put here?>' === 'X' || 'O') {
+//   store.game.over = !store.game.over
+// }
+// if (store.game.over === true) {
+//   $('#message').text('Game Over')
