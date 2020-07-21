@@ -13,7 +13,9 @@ const createNewGame = function (event) {
 const onSelect = function (event) {
   event.preventDefault()
   store.currentBox = event.target
+
   const cellIndex = $(store.currentBox).data('index')
+
   if ($(store.currentBox).text() === '') {
     const choiceValue = function (choice) {
       if (choice === 'X') {
@@ -24,6 +26,10 @@ const onSelect = function (event) {
       return store.player
     }
     const cellValue = choiceValue(store.player)
+    // if (store.game.cells === 'X' || 'O') {
+    //   console.log('game over')
+    // $('message').text('Game Over')
+    // store.game.over = !over
     api.onClick(cellIndex, cellValue)
       .then(ui.clickSuccess)
       .catch(ui.clickFailure)

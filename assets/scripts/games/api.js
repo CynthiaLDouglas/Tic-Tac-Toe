@@ -8,13 +8,6 @@ const newGame = function () {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
-    // ,
-    // data: {
-    //   game: {
-    //     cells: ['', '', '', '', '', '', '', '', ''],
-    //     over: false
-    //   }
-    // }
   })
 }
 
