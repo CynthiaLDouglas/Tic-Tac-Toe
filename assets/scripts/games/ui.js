@@ -36,7 +36,7 @@ const clickSuccess = function (response) {
       }$('#message').text('Yay! X wins')
       // Here I need to freeze the board to no longer allow clicks
       $('.cell').off('click')
-      $('#start-game').show().on('click', )
+      $('#start-game').show().on('click')
     // console.log(store.player, response.game.cells[0], response.game.cells[1], response.game.cells[2])
     }
   }
