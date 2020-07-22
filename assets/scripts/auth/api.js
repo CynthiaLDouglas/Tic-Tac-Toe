@@ -29,7 +29,7 @@ const changePassword = function (formData) {
   })
 }
 
-const signOut = function () {
+const signOutNow = function () {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -42,6 +42,6 @@ const signOut = function () {
 module.exports = {
   signUp,
   signIn,
-  signOut,
+  signOutNow,
   changePassword
 }
