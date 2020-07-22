@@ -24,7 +24,7 @@ const changePassword = function (formData) {
     method: 'PATCH',
     data: formData,
     headers: {
-      Authorization: 'Bearer ' + store.user.token
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
@@ -32,7 +32,7 @@ const changePassword = function (formData) {
 const signOut = function () {
   return $.ajax({
     headers: {
-      Authorization: 'Bearer ' + store.user.token
+      Authorization: 'Token token=' + store.user.token
     },
     url: config.apiUrl + '/sign-out',
     method: 'DELETE'
