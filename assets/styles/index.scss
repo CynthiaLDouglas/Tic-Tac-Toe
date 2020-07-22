@@ -1,29 +1,44 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  font-family: vt323;
+  background-color: #f78f3f;
+  text-align: center;
+}
+
 .container {
   height: 100vh;
+  width: 100vh;
 }
 
 .board {
-  max-height: calc(100%vh - 75px);
+  max-height: calc(100vh - 75px);
   max-width: calc(100vh - 75px);
   margin: auto;
-  background: url('https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/crazy-face.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .cell {
-  border: 1px solid #000000;
+  border-left: 10px dotted #000000;
+  border-bottom: 10px dotted #000000;
   min-height: calc(100% / 3);
   min-width: calc(100% / 3);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  color: red;
+  background-color: #000000;
+  color: #e23636;
+  font-size: 15vh;
+  text-shadow: 2px 2px rgba(247, 143, 63, .25);
+  &:hover {
+    background-color: #504a4a;
+  }
+user-select:none;
 }
 
-// #authenticated {
-//   display: none;
-// }
+.option {
+  justify-content: flex-start;
+}
+
+#authenticated {
+  display: none;
+}
