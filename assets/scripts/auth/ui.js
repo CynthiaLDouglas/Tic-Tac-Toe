@@ -2,8 +2,7 @@ const store = require('../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('You are all signed up! Try Signing In.')
-  $('#authenticated').show()
-  $('#unauthenticated').hide()
+  $('#unauthenticated').show()
 }
 
 const signUpFailure = function () {
