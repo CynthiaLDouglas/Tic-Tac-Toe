@@ -15,7 +15,6 @@ const onSelect = function (event) {
   store.currentBox = event.target
   const cellIndex = $(store.currentBox).data('index')
   if ($(store.currentBox).text() === '') {
-
     const choiceValue = function (choice) {
       if (choice === 'X') {
         store.player = 'O'
