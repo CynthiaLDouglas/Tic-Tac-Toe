@@ -19,27 +19,46 @@ const clickSuccess = function (response) {
   $('#message').text(`You played ${store.player}`)
   if (store.player === 'X') {
     if (store.player === 'X' && response.game.cells[0] && response.game.cells[1] && response.game.cells[2] === 'X') {
-      if (response.game.cells[3] && response.game.cells[4] && response.game.cells[5] === 'X') {
-        //     if (response.game.cells[6] && response.game.cells[7] && response.game.cells[8] === 'X') {
-        //       if (response.game.cells[0] && response.game.cells[3] && response.game.cells[6] === 'X') {
-        //         if (response.game.cells[1] && response.game.cells[4] && response.game.cells[7] === 'X') {
-        //           if (response.game.cells[2] && response.game.cells[5] && response.game.cells[8] === 'X') {
-        //             if (response.game.cells[0] && response.game.cells[4] && response.game.cells[8] === 'X') {
-        //               if (response.game.cells[2] && response.game.cells[4] && response.game.cells[6] === 'X') {
-        //               }
-        //             }
-        //           }
-        //         }
-        //       }
-        //     }
-        //   }
-      }$('#message').text('Yay! X wins')
-      // Here I need to freeze the board to no longer allow clicks
-      $('.cell').off('click')
-      $('#start-game').show().on('click')
-    // console.log(store.player, response.game.cells[0], response.game.cells[1], response.game.cells[2])
+      if (store.player === 'X' && response.game.cells[3] && response.game.cells[4] && response.game.cells[5] === 'X') {
+        if (store.player === 'X' && response.game.cells[6] && response.game.cells[7] && response.game.cells[8] === 'X') {
+          if (store.player === 'X' && response.game.cells[0] && response.game.cells[3] && response.game.cells[6] === 'X') {
+            if (store.player === 'X' && response.game.cells[1] && response.game.cells[4] && response.game.cells[7] === 'X') {
+              if (store.player === 'X' && response.game.cells[2] && response.game.cells[5] && response.game.cells[8] === 'X') {
+                if (store.player === 'X' && response.game.cells[0] && response.game.cells[4] && response.game.cells[8] === 'X') {
+                  if (store.player === 'X' && response.game.cells[2] && response.game.cells[4] && response.game.cells[6] === 'X') {
+                  }
+                  $('#message').text('Yay! X wins')
+                  // Here I need to freeze the board to no longer allow clicks
+                  $('.cell').off('click')
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  } else if (store.player === 'O') {
+    if (store.player === 'O' && response.game.cells[0] && response.game.cells[1] && response.game.cells[2] === 'O') {
+      if (store.player === 'O' && response.game.cells[3] && response.game.cells[4] && response.game.cells[5] === 'O') {
+        if (store.player === 'O' && response.game.cells[6] && response.game.cells[7] && response.game.cells[8] === 'O') {
+          if (store.player === 'O' && response.game.cells[0] && response.game.cells[3] && response.game.cells[6] === 'O') {
+            if (store.player === 'O' && response.game.cells[1] && response.game.cells[4] && response.game.cells[7] === 'O') {
+              if (store.player === 'O' && response.game.cells[2] && response.game.cells[5] && response.game.cells[8] === 'O') {
+                if (store.player === 'O' && response.game.cells[0] && response.game.cells[4] && response.game.cells[8] === 'O') {
+                  if (store.player === 'O' && response.game.cells[2] && response.game.cells[4] && response.game.cells[6] === 'O') {
+                  }
+                  $('#message').text('Yay! O wins')
+                  // Here I need to freeze the board to no longer allow clicks
+                  $('.cell').off('click')
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
+  // add button appear here. where would function for next game appear?
 }
 
 const clickFailure = function () {

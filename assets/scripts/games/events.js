@@ -32,9 +32,18 @@ const onSelect = function (event) {
     $('#message').text('Try another spot')
   }
 }
+// next game and board erase
+// const createNextGame = function (event) {
+//   event.preventDefault()
+//   // Create New Board when clicked
+//   api.nextGame()
+//     .then(ui.nextGameSuccess)
+//     .catch(ui.nextGameFailure)
+// }
 
 module.exports = {
   createNewGame,
+  // createNextGame,
   onSelect
 }
 // if ('<what can I put here?>' === 'X' || 'O') {
