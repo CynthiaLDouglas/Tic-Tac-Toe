@@ -6,6 +6,10 @@ body {
   text-align: center;
 }
 
+#authenticated {
+  display: none;
+}
+
 .container {
   height: 100vh;
   width: 100vh;
@@ -32,13 +36,9 @@ body {
   &:hover {
     background-color: #504a4a;
   }
-user-select:none;
+user-select: none;
 }
 
 .option {
   justify-content: flex-start;
-}
-
-#authenticated {
-  display: none;
 }
