@@ -77,7 +77,17 @@ const nextGameFailure = function () {
   $('#start-game').show()
 }
 
+const howManySuccess = function (response) {
+  console.log('success')
+}
+
+const howManyFailure = function (response) {
+  console.log('failure')
+}
+
 module.exports = {
+  howManySuccess,
+  howManyFailure,
   newGameSuccess,
   newGameFailure,
   nextGameFailure,

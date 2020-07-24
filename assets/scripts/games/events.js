@@ -43,9 +43,18 @@ const createNextGame = function (event) {
     .catch(ui.nextGameFailure)
 }
 
+const onHowMany = function (event) {
+  event.preventDefault()
+  $('#message').on('click').text('test test test')
+  api.howMany()
+    .then(ui.howManySuccess)
+    .catch(ui.howManyFailure)
+}
+
 module.exports = {
   createNewGame,
   createNextGame,
+  onHowMany,
   onSelect
 }
 // if ('<what can I put here?>' === 'X' || 'O') {

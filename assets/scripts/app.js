@@ -18,4 +18,5 @@ $(() => {
   $('.cell').on('click', boardEvents.onSelect)
   // New game to be created after one is complete
   $('#start-new-game').on('click', boardEvents.createNextGame)
+  $('#number-of-games').on('click', boardEvents.onHowMany)
 })
