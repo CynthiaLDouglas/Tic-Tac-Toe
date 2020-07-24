@@ -64,10 +64,24 @@ const clickSuccess = function (response) {
 const clickFailure = function () {
   $('#message').text('It\'s not your turn.')
 }
+const nextGameSuccess = function (response) {
+  store.game = response.game
+  $('#gamearea').show()
+  $('#start-game').hide()
+  $('#message').text('Time to play!')
+}
+
+const nextGameFailure = function () {
+  $('#message').text('try again.')
+  $('#gamearea').hide()
+  $('#start-game').show()
+}
 
 module.exports = {
   newGameSuccess,
   newGameFailure,
+  nextGameFailure,
+  nextGameSuccess,
   clickSuccess,
   clickFailure
 }
