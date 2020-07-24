@@ -2,13 +2,7 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 
-const createNewGame = function (event) {
-  event.preventDefault()
-  // Create New Board when clicked
-  api.newGame()
-    .then(ui.newGameSuccess)
-    .catch(ui.newGameFailure)
-}
+
 
 const onSelect = function (event) {
   event.preventDefault()
@@ -32,21 +26,35 @@ const onSelect = function (event) {
     $('#message').text('Try another spot')
   }
 }
+// goal combine create new game and create next game and have them count
+// how many times a game is created.
 
+const createNewGame = function (event) {
+  event.preventDefault()
+  // Create New Board when clicked
+  const game = event.target
+  // Use jquery to on click (event.target) add one to the count of games
+  api.newGame()
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure)
+}
 //  next game and board erase
 const createNextGame = function (event) {
   event.preventDefault()
   $('.cell').empty()
+  //numOfGames(game)
   // Create New Board when clicked
   api.nextGame()
     .then(ui.nextGameSuccess)
     .catch(ui.nextGameFailure)
 }
 
+//  goal: this would pull the number of games played above and
+// be displayed on the user.
 const onHowMany = function (event) {
   event.preventDefault()
-  $('#message').on('click').text('test test test')
-  api.howMany()
+  let numOfGames = store.counter
+  api.howMany(numOfGames)
     .then(ui.howManySuccess)
     .catch(ui.howManyFailure)
 }

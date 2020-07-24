@@ -40,12 +40,16 @@ const nextGame = function () {
   })
 }
 
-const howMany = function () {
+const howMany = function (game) {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: game,
+      over: false
     }
   })
 }
