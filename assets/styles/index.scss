@@ -31,8 +31,8 @@ p {
 }
 
 .cell {
-  border-left: 10px dotted #000000;
-  border-bottom: 10px dotted #000000;
+  border-left: 10px dashed #000000;
+  border-bottom: 10px dashed #000000;
   min-height: calc(100% / 3);
   min-width: calc(100% / 3);
   display: flex;
