@@ -1,40 +1,43 @@
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
-
-
+store.player = 'X'
 
 const onSelect = function (event) {
   event.preventDefault()
   store.currentBox = event.target
   const cellIndex = $(store.currentBox).data('index')
   if ($(store.currentBox).text() === '') {
-    const choiceValue = function (choice) {
-      if (choice === 'X') {
-        store.player = 'O'
-      } else {
-        store.player = 'X'
-      }
+    $(store.currentBox).text(store.player)
+    if (store.player !== 'O') {
+      store.player = 'O'
       return store.player
+    } else if (store.player === 'O') {
+      $(store.currentBox).text(store.player)
+      store.player = 'X'
+      return store.player
+    } else {
+      const cellValue = store.player
+      api.onClick(cellIndex, cellValue)
+        .then(ui.clickSuccess)
+        .catch(ui.clickFailure)
     }
-    const cellValue = choiceValue(store.player)
-
-    api.onClick(cellIndex, cellValue)
-      .then(ui.clickSuccess)
-      .catch(ui.clickFailure)
   } else {
     $('#message').text('Try another spot')
   }
 }
-// goal combine create new game and create next game and have them count
-// how many times a game is created.
 
 const createNewGame = function (event) {
   event.preventDefault()
   // Create New Board when clicked
   const game = event.target
+  const numOfGame = (game) => {
+    store.counter += 1
+    return store.counter
+  }
+  numOfGame(game)
   // Use jquery to on click (event.target) add one to the count of games
-  api.newGame()
+  api.newGame(numOfGame)
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
 }
@@ -42,7 +45,7 @@ const createNewGame = function (event) {
 const createNextGame = function (event) {
   event.preventDefault()
   $('.cell').empty()
-  //numOfGames(game)
+  // numOfGames(game)
   // Create New Board when clicked
   api.nextGame()
     .then(ui.nextGameSuccess)
@@ -53,7 +56,7 @@ const createNextGame = function (event) {
 // be displayed on the user.
 const onHowMany = function (event) {
   event.preventDefault()
-  let numOfGames = store.counter
+  const numOfGames = store.counter
   api.howMany(numOfGames)
     .then(ui.howManySuccess)
     .catch(ui.howManyFailure)
