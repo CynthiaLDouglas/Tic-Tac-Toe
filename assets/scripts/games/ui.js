@@ -8,8 +8,6 @@ const newGameSuccess = function (response) {
   $('#message').text('Time to play!')
 }
 
-// If when I click, cells are not empty, empty cells do new store.
-
 const newGameFailure = function () {
   $('#message').text('try again.')
   $('#gamearea').hide()
@@ -18,12 +16,17 @@ const newGameFailure = function () {
 
 const clickSuccess = function (response) {
   store.game = response.game
-  $('#message').text(`You played ${store.player}`)
   $('#start-new-game').show()
+  const gameOver = function (response) {
+    if ((store.game.cell[0] === store.game.cell[1] && store.game.cell[1] === store.game.cell[2]) && (store.game.cell[0] === 'X' || store.game.cell[0] === 'O')) {
+      console.log(true)
+      return true
+    }
+  }
+  gameOver(response)
 }
-
 const clickFailure = function () {
-  $('#message').text('It\'s not your turn.')
+  $('#message').text('Game Over.')
 }
 
 const howManySuccess = function (response) {

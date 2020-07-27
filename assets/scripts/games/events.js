@@ -9,11 +9,13 @@ const onSelect = function (event) {
   const cellIndex = $(store.currentBox).data('index')
   if ($(store.currentBox).text() === '') {
     $(store.currentBox).text(store.player)
+    $('#message').text(`You played ${store.player}`)
     if (store.player !== 'O') {
       store.player = 'O'
       return store.player
     } else if (store.player === 'O') {
       $(store.currentBox).text(store.player)
+      $('#message').text(`You played ${store.player}`)
       store.player = 'X'
       return store.player
     } else {
