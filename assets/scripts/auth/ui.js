@@ -10,11 +10,20 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
+<<<<<<< HEAD
+=======
+  $('#message').text('You are all signed in! Ready to Play?')
+>>>>>>> logicRetry
   store.user = response.user
   $('#message').text('You are all signed in! Ready to Play?')
   $('#authenticated').show()
   $('#unauthenticated').hide()
   $('.container').hide()
+<<<<<<< HEAD
+=======
+  $('#start-new-game').hide()
+  $('#games-played').hide()
+>>>>>>> logicRetry
 }
 
 const signInFailure = function () {

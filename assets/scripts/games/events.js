@@ -3,11 +3,20 @@ const ui = require('./ui')
 const store = require('../store')
 store.player = 'X'
 
+const createNextGame = function (event) {
+  event.preventDefault()
+  // Create New Board when clicked
+  api.nextGame()
+    .then(ui.nextGameSuccess)
+    .catch(ui.nextGameFailure)
+}
+
 const onSelect = function (event) {
   event.preventDefault()
   store.currentBox = event.target
   const cellIndex = $(store.currentBox).data('index')
   if ($(store.currentBox).text() === '') {
+<<<<<<< HEAD
     $(store.currentBox).text(store.player)
     $('#message').text(`You played ${store.player}`)
     if (store.player !== 'O') {
@@ -24,11 +33,19 @@ const onSelect = function (event) {
         .then(ui.clickSuccess)
         .catch(ui.clickFailure)
     }
+=======
+    const cellValue = store.player
+    console.log(cellIndex, cellValue)
+    api.onClick(cellIndex, cellValue)
+      .then(ui.clickSuccess)
+      .catch(ui.clickFailure)
+>>>>>>> logicRetry
   } else {
     $('#message').text('Try another spot')
   }
 }
 
+<<<<<<< HEAD
 const createNewGame = function (event) {
   event.preventDefault()
   // Create New Board when clicked
@@ -56,6 +73,8 @@ const createNextGame = function (event) {
 
 //  goal: this would pull the number of games played above and
 // be displayed on the user.
+=======
+>>>>>>> logicRetry
 const onHowMany = function (event) {
   event.preventDefault()
   const numOfGames = store.counter
