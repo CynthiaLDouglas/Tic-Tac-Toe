@@ -11,6 +11,16 @@ const newGame = function () {
   })
 }
 
+const nextGame = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 const onClick = function (index, value) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
@@ -30,7 +40,23 @@ const onClick = function (index, value) {
   })
 }
 
+const howMany = function (game) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: game,
+      over: false
+    }
+  })
+}
+
 module.exports = {
   newGame,
+  nextGame,
+  howMany,
   onClick
 }
