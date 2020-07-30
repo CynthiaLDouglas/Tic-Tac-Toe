@@ -12,10 +12,10 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   $('#message').text('You are all signed in! Ready to Play?')
-  $('form').trigger('reset')
   store.user = response.user
   $('#authenticated').show()
   $('#unauthenticated').hide()
+  $('.container').hide()
   $('#start-new-game').hide()
   $('#games-played').hide()
 }
