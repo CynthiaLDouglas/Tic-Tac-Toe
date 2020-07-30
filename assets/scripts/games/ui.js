@@ -10,8 +10,10 @@ const newGameSuccess = function (response) {
   $('#message').text('Time to play!')
   store.player = 'X'
   const numOfGame = (response) => {
-    store.counter += 1
-    return store.counter
+    if (store.over === true) {
+      store.counter += 1
+      return store.counter
+    }
   }
   numOfGame(response)
 }
@@ -31,27 +33,34 @@ const clickSuccess = function (response) {
     if (store.player === 'X' && response.game.cells[0] === 'X' && response.game.cells[0] === response.game.cells[1] && response.game.cells[1] === response.game.cells[2]) {
       $('.cell').off('click')
       $('#message').text('X wins')
+      store.over = !store.over
     } else if (store.player === 'X' && response.game.cells[3] === 'X' && response.game.cells[3] === response.game.cells[4] && response.game.cells[4] === response.game.cells[5]) {
       $('.cell').off('click')
       $('#message').text('X wins')
     } else if (store.player === 'X' && response.game.cells[6] === 'X' && response.game.cells[6] === response.game.cells[7] && response.game.cells[7] === response.game.cells[8]) {
       $('.cell').off('click')
       $('#message').text('X wins')
+      store.over = !store.over
     } else if (store.player === 'X' && response.game.cells[0] === 'X' && response.game.cells[0] === response.game.cells[4] && response.game.cells[4] === response.game.cells[8]) {
       $('.cell').off('click')
       $('#message').text('X wins')
+      store.over = !store.over
     } else if (store.player === 'X' && response.game.cells[2] === 'X' && response.game.cells[2] === response.game.cells[4] && response.game.cells[4] === response.game.cells[6]) {
       $('.cell').off('click')
       $('#message').text('X wins')
+      store.over = !store.over
     } else if (store.player === 'X' && response.game.cells[0] === 'X' && response.game.cells[0] === response.game.cells[3] && response.game.cells[3] === response.game.cells[6]) {
       $('.cell').off('click')
       $('#message').text('X wins')
+      store.over = !store.over
     } else if (store.player === 'X' && response.game.cells[1] === 'X' && response.game.cells[1] === response.game.cells[4] && response.game.cells[4] === response.game.cells[7]) {
       $('.cell').off('click')
       $('#message').text('X wins')
+      store.over = !store.over
     } else if (store.player === 'X' && response.game.cells[2] === 'X' && response.game.cells[2] === response.game.cells[5] && response.game.cells[5] === response.game.cells[8]) {
       $('.cell').off('click')
       $('#message').text('X wins')
+      store.over = !store.over
     } else {
       console.log('Did O win?')
     }
