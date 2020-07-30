@@ -3,11 +3,6 @@ store.counter = 0
 
 const newGameSuccess = function (response) {
   store.game = response.game
-  $('.container').show()
-  $('#start-game').hide()
-  $('#start-new-game').hide()
-  $('#games-played').hide()
-  $('#message').text('Time to play!')
   store.player = 'X'
   store.over = false
   const numOfGame = (response) => {
@@ -15,6 +10,11 @@ const newGameSuccess = function (response) {
     return store.counter
   }
   numOfGame(response)
+  $('.container').show()
+  $('#start-game').hide()
+  $('#start-new-game').show()
+  $('#games-played').show()
+  $('#message').text('Time to play!')
 }
 
 const newGameFailure = function () {
@@ -73,6 +73,8 @@ const clickSuccess = function (response) {
         store.over = !store.over
       } else {
         $('#message').text('It\'s a tie')
+        // uncomment when tie is successfully created
+        // store.over = !store.over
       }
     }
   }
@@ -98,9 +100,7 @@ const clickFailure = function () {
 
 const nextGameSuccess = function (response) {
   $('.container').hide()
-  $('.cell').empty()
   $('#start-game').show()
-  $('#start-new-game').hide()
   $('#message').text('Ready for the Next Round!')
 }
 
