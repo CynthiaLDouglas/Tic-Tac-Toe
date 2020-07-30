@@ -9,12 +9,10 @@ const newGameSuccess = function (response) {
   $('#games-played').hide()
   $('#message').text('Time to play!')
   store.player = 'X'
+  store.over = false
   const numOfGame = (response) => {
-    if (store.over === true) {
       store.counter += 1
       return store.counter
-    }
-  }
   numOfGame(response)
 }
 
