@@ -27,6 +27,12 @@ const clickSuccess = function (response) {
   $('#start-new-game').show()
   $(store.currentBox).text(store.player)
   $('#message').text(`You played ${store.player}`)
+  const gameLogic = function (response) {
+    if (store.player === 'X' && response.game.cells[0] === 'X') {
+      console.log('its working')
+    }
+  }
+  gameLogic(response)
   if (store.player !== 'O') {
     store.player = 'O'
     return store.player
@@ -36,9 +42,6 @@ const clickSuccess = function (response) {
     return store.player
   } else {
     $('#message').text('Try another spot')
-  }
-  const gameLogic = function () {
-
   }
 }
 
