@@ -24,7 +24,6 @@ const onSelect = function (event) {
   const cellIndex = $(store.currentBox).data('index')
   if ($(store.currentBox).text() === '') {
     const cellValue = store.player
-    console.log(cellIndex, cellValue)
     api.onClick(cellIndex, cellValue)
       .then(ui.clickSuccess)
       .catch(ui.clickFailure)
