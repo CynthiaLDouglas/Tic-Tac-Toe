@@ -17,7 +17,6 @@ const signInSuccess = function (response) {
   $('#unauthenticated').hide()
   $('.container').hide()
   $('#start-new-game').hide()
-  $('#games-played').hide()
 }
 
 const signInFailure = function () {
