@@ -120,7 +120,7 @@ const nextGameFailure = function () {
 }
 
 const howManySuccess = function (response) {
-  $('#message').text(`You have played ${store.counter}`)
+  $('#message').text(`You have played ${response.games.length}`)
 }
 
 module.exports = {

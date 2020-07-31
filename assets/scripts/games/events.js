@@ -35,8 +35,7 @@ const onSelect = function (event) {
 
 const onHowMany = function (event) {
   event.preventDefault()
-  const numOfGames = store.counter
-  api.howMany(numOfGames)
+  api.howMany()
     .then(ui.howManySuccess)
     .catch(ui.howManyFailure)
 }
