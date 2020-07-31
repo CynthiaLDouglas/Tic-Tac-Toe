@@ -2,7 +2,8 @@ const store = require('../store')
 
 const signUpSuccess = function (response) {
   $('#message').text('You are all signed up! Try Signing In.')
-  $('#unauthenticated').show()
+  $('#authenticated').show()
+  $('#unauthenticated').hide()
 }
 
 const signUpFailure = function () {
@@ -10,27 +11,12 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-<<<<<<< HEAD
-=======
   $('#message').text('You are all signed in! Ready to Play?')
->>>>>>> logicRetry
   store.user = response.user
-  $('#message').text('You are all signed in! Ready to Play?')
   $('#authenticated').show()
   $('#unauthenticated').hide()
   $('.container').hide()
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  $('#start-new-game').hide()
-<<<<<<< HEAD
-  $('#games-played').hide()
->>>>>>> logicRetry
-=======
->>>>>>> fixBugs
-=======
   $('#start-game').show()
->>>>>>> finalTouch
 }
 
 const signInFailure = function () {

@@ -6,15 +6,10 @@ body {
   text-align: center;
 }
 
-<<<<<<< HEAD
-p {
-  font-size: 72px;
-=======
 h1 {
   color: #222222;
   font-size: 72px;
   text-shadow: 0px 2px 3px #555555;
->>>>>>> finalTouch
 }
 
 #message {
@@ -53,8 +48,8 @@ h1 {
 }
 
 .cell {
-  border-left: 10px dashed #000000;
-  border-bottom: 10px dashed #000000;
+  border-left: 10px dotted #000000;
+  border-bottom: 10px dotted #000000;
   min-height: calc(100% / 3);
   min-width: calc(100% / 3);
   display: flex;
@@ -67,12 +62,9 @@ h1 {
   &:hover {
     background-color: #504a4a;
   }
-<<<<<<< HEAD
-=======
   &:active {
     background-color: blue;
   }
->>>>>>> finalTouch
 user-select: none;
 }
 

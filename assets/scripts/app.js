@@ -1,3 +1,4 @@
+
 'use strict'
 
 const authEvents = require('./auth/events')
@@ -10,18 +11,12 @@ const boardEvents = require('./games/events')
 // require('./example')
 
 $(() => {
-  $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('click', authEvents.onSignOut)
-  $('#start-game').on('click', boardEvents.createNewGame)
-  $('.cell').on('click', boardEvents.onSelect)
-<<<<<<< HEAD
-  // New game to be created after one is complete
-  $('#start-new-game').on('click', boardEvents.createNextGame)
-  $('#number-of-games').on('click', boardEvents.onHowMany)
-=======
-  $('#start-new-game').on('click', boardEvents.createNextGame)
-  $('#games-played').on('click', boardEvents.onHowMany)
->>>>>>> logicRetry
+$('#sign-up').on('submit', authEvents.onSignUp)
+$('#sign-in').on('submit', authEvents.onSignIn)
+$('#change-password').on('submit', authEvents.onChangePassword)
+$('#sign-out').on('submit', authEvents.onSignOut)
+$('#start-game').on('click', boardEvents.createNewGame)
+$('.cell').on('click', boardEvents.onSelect)
+$('#start-new-game').on('click', boardEvents.createNextGame)
+$('#games-played').on('click', boardEvents.onHowMany)
 })

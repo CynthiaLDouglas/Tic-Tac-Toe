@@ -40,24 +40,7 @@ const onClick = function (index, value) {
   })
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-const nextGame = function () {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
-
-=======
->>>>>>> logicRetry
-const howMany = function (game) {
-=======
 const howMany = function () {
->>>>>>> fixBugs
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
@@ -68,12 +51,8 @@ const howMany = function () {
 }
 
 module.exports = {
-  howMany,
   newGame,
   nextGame,
-<<<<<<< HEAD
-=======
   howMany,
->>>>>>> logicRetry
   onClick
 }
