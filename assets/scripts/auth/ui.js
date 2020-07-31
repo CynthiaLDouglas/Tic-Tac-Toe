@@ -22,8 +22,11 @@ const signInSuccess = function (response) {
 <<<<<<< HEAD
 =======
   $('#start-new-game').hide()
+<<<<<<< HEAD
   $('#games-played').hide()
 >>>>>>> logicRetry
+=======
+>>>>>>> fixBugs
 }
 
 const signInFailure = function () {

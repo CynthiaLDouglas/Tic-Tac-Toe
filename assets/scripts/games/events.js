@@ -77,8 +77,7 @@ const createNextGame = function (event) {
 >>>>>>> logicRetry
 const onHowMany = function (event) {
   event.preventDefault()
-  const numOfGames = store.counter
-  api.howMany(numOfGames)
+  api.howMany()
     .then(ui.howManySuccess)
     .catch(ui.howManyFailure)
 }
@@ -89,8 +88,3 @@ module.exports = {
   onHowMany,
   onSelect
 }
-// if ('<what can I put here?>' === 'X' || 'O') {
-//   store.game.over = !store.game.over
-// }
-// if (store.game.over === true) {
-//   $('#message').text('Game Over')

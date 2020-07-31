@@ -41,6 +41,7 @@ const onClick = function (index, value) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const nextGame = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
@@ -54,15 +55,14 @@ const nextGame = function () {
 =======
 >>>>>>> logicRetry
 const howMany = function (game) {
+=======
+const howMany = function () {
+>>>>>>> fixBugs
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    },
-    data: {
-      game: game,
-      over: false
     }
   })
 }
