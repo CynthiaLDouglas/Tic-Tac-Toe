@@ -8,10 +8,10 @@ const newGameSuccess = function (response) {
   $('#start-new-game').show()
 =======
   store.game = response.game
-  console.log('This is store.game before game over', store.game)
   store.player = 'X'
   $('.container').show()
   $('#start-game').hide()
+<<<<<<< HEAD
 <<<<<<< HEAD
   $('#start-new-game').hide()
   $('#games-played').hide()
@@ -20,12 +20,14 @@ const newGameSuccess = function (response) {
   $('#start-new-game').show()
   $('#games-played').show()
 >>>>>>> fixBugs
+=======
+>>>>>>> finalTouch
   $('#message').text('Time to play!')
 }
 
 const newGameFailure = function () {
   $('#message').text('try again.')
-  $('#gamearea').hide()
+  $('.container').hide()
   $('#start-game').show()
 }
 
@@ -90,7 +92,6 @@ const clickSuccess = function (response) {
 =======
   if (store.game.over === false) {
     store.game = response.game
-    $('#start-new-game').show()
     $(store.currentBox).text(store.player)
     $('#message').text(`You played ${store.player}`)
     const gameLogic = function (response) {
@@ -150,9 +151,6 @@ const clickSuccess = function (response) {
             store.game.over = !store.game.over
           }
         }
-        // if (store.game.over === true) {
-        //   $('.cell').off('click')
-        // }
         if (store.player !== 'O') {
           store.player = 'O'
           return store.player
@@ -196,7 +194,6 @@ const nextGameSuccess = function (response) {
   store.game.over = false
   $('.container').hide()
   $('#start-game').show()
-  $('#start-new-game').hide()
   $('#message').text('Ready for the Next Round!')
   $('.cell').empty()
 }

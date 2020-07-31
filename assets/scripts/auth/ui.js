@@ -20,6 +20,7 @@ const signInSuccess = function (response) {
   $('#unauthenticated').hide()
   $('.container').hide()
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   $('#start-new-game').hide()
 <<<<<<< HEAD
@@ -27,6 +28,9 @@ const signInSuccess = function (response) {
 >>>>>>> logicRetry
 =======
 >>>>>>> fixBugs
+=======
+  $('#start-game').show()
+>>>>>>> finalTouch
 }
 
 const signInFailure = function () {

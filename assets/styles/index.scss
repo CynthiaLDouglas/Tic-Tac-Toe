@@ -2,12 +2,19 @@
 
 body {
   font-family: vt323;
-  background-color: #f78f3f;
+  background: #474747;
   text-align: center;
 }
 
+<<<<<<< HEAD
 p {
   font-size: 72px;
+=======
+h1 {
+  color: #222222;
+  font-size: 72px;
+  text-shadow: 0px 2px 3px #555555;
+>>>>>>> finalTouch
 }
 
 #message {
@@ -30,6 +37,21 @@ p {
   margin: auto;
 }
 
+.btn {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.5s;
+  &:hover {
+    opacity: 1
+  }
+}
+
 .cell {
   border-left: 10px dashed #000000;
   border-bottom: 10px dashed #000000;
@@ -45,6 +67,12 @@ p {
   &:hover {
     background-color: #504a4a;
   }
+<<<<<<< HEAD
+=======
+  &:active {
+    background-color: blue;
+  }
+>>>>>>> finalTouch
 user-select: none;
 }
 

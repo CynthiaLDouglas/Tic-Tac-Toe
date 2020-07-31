@@ -35,7 +35,6 @@ const onSelect = function (event) {
     }
 =======
     const cellValue = store.player
-    console.log(cellIndex, cellValue)
     api.onClick(cellIndex, cellValue)
       .then(ui.clickSuccess)
       .catch(ui.clickFailure)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Tic - Tac - Toe</title>
+      <title>tic - tac - toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -17,7 +17,11 @@
 
     <body>
 
+<<<<<<< HEAD
       <p>Tic - Tac - Toe</p>
+=======
+      <h1>tic - tac - toe</h1>
+>>>>>>> finalTouch
       <p id="message"></p>
 
       <div id="unauthenticated">
@@ -26,7 +30,7 @@
             <input name="credentials[email]" type="text" placeholder="your email here">
             <input name="credentials[password]" type="text" placeholder="your password here">
             <input name="credentials[password_confirmation]" placeholder="retype password" type="password">
-            <button type="submit">Sign Up!</button>
+            <button class="btn" type="submit">Sign Up!</button>
           </form>
         </div>
 
@@ -34,7 +38,7 @@
           <form id="sign-in">
             <input name="credentials[email]" type="text" placeholder="your email here">
             <input name="credentials[password]" type="password" placeholder="your password here">
-            <button type="submit">Sign In!</button>
+            <button class="btn" type="submit">Sign In!</button>
           </form>
         </div>
       </div>
@@ -44,11 +48,12 @@
           <form id="change-password">
             <input name="passwords[old]" type="password" placeholder="your old password here">
             <input name="passwords[new]" type="password" placeholder="your new password here">
-            <button type="submit">Change Your Password!</button>
+            <button class="btn" type="submit">Change Your Password!</button>
           </form>
         </div>
 
         <div>Sign Out:
+<<<<<<< HEAD
           <button id="sign-out" type="submit">Sign Out!</button>
         </div>
 
@@ -59,7 +64,18 @@
 =======
         <button id="games-played">Games Played</button>
 >>>>>>> logicRetry
+=======
+          <form id="sign-out">
+            <button class="btn" type="submit">Sign Out!</button>
+          </form>
+        </div>
+
+        <button class="btn" id="start-game">Start Game</button>
+
+>>>>>>> finalTouch
       <section class="container">
+        <button class="btn" id="start-new-game">Start New Game</button>
+        <button class="btn" id="games-played">Games Played</button>
         <div class="row h-100 w-100 board" id="gamearea">
             <div class="col-4 box cell" data-index="0"></div>
             <div class="col-4 box cell" data-index="1"></div>
