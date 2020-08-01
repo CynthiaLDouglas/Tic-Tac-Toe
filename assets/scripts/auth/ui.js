@@ -1,9 +1,12 @@
 const store = require('../store')
 
 const signUpSuccess = function (response) {
-  $('#message').text('You are all signed up! Try Signing In.')
-  $('#authenticated').show()
-  $('#unauthenticated').hide()
+  $('#modal-message').text('You are all signed up! Try Signing In.')
+  $('#authenticated').hide()
+  $('#unauthenticated').show()
+  $('#sign-up').hide()
+  $('form').trigger('reset')
+  $('.close').hide()
 }
 
 const signUpFailure = function () {
@@ -17,6 +20,7 @@ const signInSuccess = function (response) {
   $('#unauthenticated').hide()
   $('.container').hide()
   $('#start-game').show()
+  $('form').trigger('reset')
 }
 
 const signInFailure = function () {
