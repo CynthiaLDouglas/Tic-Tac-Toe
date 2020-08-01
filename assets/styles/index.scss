@@ -49,28 +49,32 @@ h1 {
   opacity: .8;
   transition: 0.5s;
   &:hover {
-    opacity: 1
+    opacity: 1;
+    color: #000000;
+    background-color: #a9c7e8;
   }
 }
 
 .cell {
-  border-left: 10px dashed #000000;
-  border-bottom: 10px dashed #000000;
+  border: 10px dashed #092544;
   min-height: calc(100% / 3);
   min-width: calc(100% / 3);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
-  color: #e23636;
-  font-size: 15vh;
-  text-shadow: 4px 4px rgba(73, 10, 61, .5);
+  background-color: #092544;
+  color: #f17171;
+  font-size: 10vh;
+  text-shadow: 4px 4px rgba(171, 116, 172, .5);
+
   &:hover {
-    background-color: #F8CA00;
+    background-color: #f1d671;
   }
+
   &:active {
-    background-color: #8A9B0F;
+    background-color: #b4998c;
   }
+
 user-select: none;
 }
 
