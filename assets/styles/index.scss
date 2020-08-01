@@ -48,8 +48,8 @@ h1 {
 }
 
 .cell {
-  border-left: 10px dotted #000000;
-  border-bottom: 10px dotted #000000;
+  border-left: 10px dashed #000000;
+  border-bottom: 10px dashed #000000;
   min-height: calc(100% / 3);
   min-width: calc(100% / 3);
   display: flex;
@@ -58,16 +58,20 @@ h1 {
   background-color: #000000;
   color: #e23636;
   font-size: 15vh;
-  text-shadow: 2px 2px rgba(247, 143, 63, .25);
+  text-shadow: 4px 4px rgba(73, 10, 61, .5);
   &:hover {
-    background-color: #504a4a;
+    background-color: #F8CA00;
   }
   &:active {
-    background-color: blue;
+    background-color: #8A9B0F;
   }
 user-select: none;
 }
 
 .option {
   justify-content: flex-start;
+}
+
+.col-12 {
+  padding: 35px;
 }

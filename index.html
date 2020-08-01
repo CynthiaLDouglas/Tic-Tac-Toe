@@ -17,9 +17,10 @@
 
     <body>
 
-      <div class="jumbotron text-center"><h1>tic - tac - toe</h1><p id="message"></p></div>
-      <div id="unauthenticated">
-        <div>Click here to Sign Up!
+
+      <div class="text-center"><h1>tic - tac - toe</h1><p id="message"></p></div>
+      <div class="col-12" id="unauthenticated">
+        <div class="col">Click here to Sign Up!<br />
           <!-- Opens Modal -->
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Sign Up!</button>
           <!-- The Modal -->
@@ -51,15 +52,16 @@
           </div>
           </div>
           </div>
-
+      <div class="col-12">
         <div>Sign In Here:
           <form id="sign-in">
-            <input name="credentials[email]" type="text" placeholder="your email here">
-            <input name="credentials[password]" type="password" placeholder="your password here">
+            <input name="credentials[email]" type="text" placeholder="your email here"><br />
+            <input name="credentials[password]" type="password" placeholder="your password here"><br />
             <button class="btn" type="submit">Sign In!</button>
           </form>
         </div>
       </div>
+    </div>
 
     <div id="authenticated">
         <div>Change Your Password:
