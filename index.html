@@ -15,86 +15,109 @@
       </style>
     </head>
 
-    <body>
+<body>
+  <!-- Heading for the entire game -->
+    <div class="row-12">
+      <h1>tic - tac - toe</h1>
+      <div><p id="message"></p></div>
+    </div>
 
+<div id="authenticated">
+<div class="row" id="options-bar">
+  <div><button class="btn" id="start-game">Start Game</button></div>
+  <div><button class="btn" id="sign-out" type="submit">Sign Out!</button></div>
+  Change Password Here
 
-      <div class="text-center"><h1>tic - tac - toe</h1><p id="message"></p></div>
-      <div class="col-12" id="unauthenticated">
-        <div class="col">Click here to Sign Up!<br />
-          <!-- Opens Modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Sign Up!</button>
-          <!-- The Modal -->
-          <div class="modal" id="myModal">
-          <div class="modal-dialog">
-          <div class="modal-content">
-          <!-- Modal Header -->
+  <!--Modal:Options-->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#password-modal">
+    Submit
+  </button>
+  <!-- The Modal -->
+    <div class="modal" id="password-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
           <div class="modal-header">
-          <h4 class="modal-title">Sign Up Here</h4>
-          <button type="button" class="close btn-secondary" data-dismiss="modal">Maybe Later</button>
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
-          <!-- Modal body -->
           <div class="modal-body">
             <p id="modal-message"></p>
-            <form id="sign-up">
-              <input name="credentials[email]" type="text" placeholder="your email here">
-              <input name="credentials[password]" type="text" placeholder="your password here">
-              <input name="credentials[password_confirmation]" placeholder="retype password" type="password">
-              <button>Submit</button>
+            <form id="change-password">
+              <input name="passwords[old]" type="password" placeholder="Enter your old password here"><br />
+              <input name="passwords[new]" type="password" placeholder=" Enter your new password here"><br />
+              <button class="btn" type="submit">Change Your Password!</button>
             </form>
           </div>
-          <!-- Modal footer -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          </div>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+  <!-- Modal: Options -->
+
+    <div class="col-8 container">
+      <button class="btn" id="start-new-game">Start New Game</button>
+      <button class="btn" id="games-played">Games Played</button>
+      <div class="row h-100 w-100 board" id="gamearea">
+          <div class="col-4 box cell" data-index="0"></div>
+          <div class="col-4 box cell" data-index="1"></div>
+          <div class="col-4 box cell" data-index="2"></div>
+          <div class="col-4 box cell" data-index="3"></div>
+          <div class="col-4 box cell" data-index="4"></div>
+          <div class="col-4 box cell" data-index="5"></div>
+          <div class="col-4 box cell" data-index="6"></div>
+          <div class="col-4 box cell" data-index="7"></div>
+          <div class="col-4 box cell" data-index="8"></div>
+      </div>
+    </div>
+  </div>
 
 
-          </div>
-          </div>
-          </div>
-          </div>
-      <div class="col-12">
-        <div>Sign In Here:
-          <form id="sign-in">
-            <input name="credentials[email]" type="text" placeholder="your email here"><br />
-            <input name="credentials[password]" type="password" placeholder="your password here"><br />
-            <button class="btn" type="submit">Sign In!</button>
-          </form>
+      <div id="unauthenticated">
+        <div class="">Click here to Sign Up!<br />
+          <!-- Opens Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">Sign Up!</button>
+          <!-- The Modal -->
+            <div class="modal" id="sign-up-modal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+          <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Sign Up Here</h4>
+              <button type="button" class="close btn-secondary" data-dismiss="modal">Maybe Later</button>
+            </div>
+          <!-- Modal body -->
+            <div class="modal-body">
+              <p id="modal-message1"></p>
+              <form id="sign-up">
+                <input name="credentials[email]" type="text" placeholder="your email here">
+                <input name="credentials[password]" type="text" placeholder="your password here">
+                <input name="credentials[password_confirmation]" placeholder="retype password" type="password">
+                <button class="btn">Submit</button>
+              </form>
+            </div>
+          <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+            </div>
+            </div>
         </div>
+        <div class="col-md-12">
+          <div>Sign In Here:
+            <form id="sign-in">
+              <input name="credentials[email]" type="text" placeholder="your email here"><br />
+              <input name="credentials[password]" type="password" placeholder="your password here"><br />
+                <button class="btn" type="submit">Sign In!</button>
+            </form>
+          </div>
       </div>
     </div>
 
-    <div id="authenticated">
-        <div>Change Your Password:
-          <form id="change-password">
-            <input name="passwords[old]" type="password" placeholder="your old password here">
-            <input name="passwords[new]" type="password" placeholder="your new password here">
-            <button class="btn" type="submit">Change Your Password!</button>
-          </form>
-        </div>
 
-        <div>Sign Out:
-          <form id="sign-out">
-            <button class="btn" type="submit">Sign Out!</button>
-          </form>
-        </div>
-
-        <button class="btn" id="start-game">Start Game</button>
-
-      <section class="container">
-        <button class="btn" id="start-new-game">Start New Game</button>
-        <button class="btn" id="games-played">Games Played</button>
-        <div class="row h-100 w-100 board" id="gamearea">
-            <div class="col-4 box cell" data-index="0"></div>
-            <div class="col-4 box cell" data-index="1"></div>
-            <div class="col-4 box cell" data-index="2"></div>
-            <div class="col-4 box cell" data-index="3"></div>
-            <div class="col-4 box cell" data-index="4"></div>
-            <div class="col-4 box cell" data-index="5"></div>
-            <div class="col-4 box cell" data-index="6"></div>
-            <div class="col-4 box cell" data-index="7"></div>
-            <div class="col-4 box cell" data-index="8"></div>
-        </div>
-      </section>
-    </div>
-  </body>
+</body>
 </html>

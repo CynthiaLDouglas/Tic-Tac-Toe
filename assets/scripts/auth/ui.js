@@ -1,7 +1,7 @@
 const store = require('../store')
 
 const signUpSuccess = function (response) {
-  $('#modal-message').text('You are all signed up! Try Signing In.')
+  $('#modal-message1').text('You are all signed up! Try Signing In.')
   $('#authenticated').hide()
   $('#unauthenticated').show()
   $('#sign-up').hide()
@@ -17,6 +17,7 @@ const signInSuccess = function (response) {
   $('#message').text('You are all signed in! Ready to Play?')
   store.user = response.user
   $('#authenticated').show()
+  $('.authenticated').show()
   $('#unauthenticated').hide()
   $('.container').hide()
   $('#start-game').show()
@@ -29,18 +30,19 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function (response) {
-  $('#message').text('Your password has been changed.')
-  $('form').trigger('reset')
+  $('#modal-message').text('Your password has been changed.')
+  $('form').hide()
 }
 
 const changePasswordFailure = function () {
-  $('#message').text('Please try again.')
+  $('#modal-message').text('Please try again.')
 }
 
 const signOutSuccess = function (response) {
   $('#message').text('You are signed out.')
   $('#unauthenticated').show()
   $('#authenticated').hide()
+  $('.authenticated').hide()
 }
 
 const signOutFailure = function () {
