@@ -10,7 +10,7 @@ const signUpSuccess = function (response) {
 }
 
 const signUpFailure = function () {
-  $('#message').text('Please try again.')
+  $('#modal-message1').text('Please try again.')
 }
 
 const signInSuccess = function (response) {
@@ -31,10 +31,13 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function (response) {
   $('#modal-message').text('Your password has been changed.')
+  $('#change-password').hide()
+  $('form').trigger('reset')
 }
 
 const changePasswordFailure = function () {
   $('#modal-message').text('Please try again.')
+  $('.close').hide()
 }
 
 const signOutSuccess = function (response) {
