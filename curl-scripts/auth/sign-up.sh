@@ -1,4 +1,4 @@
-curl "https://tic-tac-toe-api-development.herokuapp.com/sign-up" \
+curl "<url>" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
