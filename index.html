@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>tic - tac - toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="" rel="stylesheet">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <style>
+      @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+      </style>
+    </head>
+
+<body>
+  <!-- Heading for the entire game -->
+    <div class="row-12">
+      <h1 class="line-1 anim-typewriter">tic-tac-toe</h1>
+      <div><p id="message"></p></div>
+    </div>
+
+<div id="authenticated">
+<div class="row" id="options-bar">
+  <div><button class="btn" id="start-game">Start Game</button></div>
+  <div><button class="btn" id="sign-out" type="submit">Sign Out!</button></div>
+
+
+  <!--Modal:Options-->
+  <button type="button" class="btn" data-toggle="modal" data-target="#password-modal">
+    Change Password
+  </button>
+  <!-- The Modal -->
+    <div class="modal" id="password-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p id="modal-message"></p>
+            <form id="change-password">
+              <input name="passwords[old]" type="password" placeholder="Enter your old password here"><br />
+              <input name="passwords[new]" type="password" placeholder=" Enter your new password here"><br />
+              <button class="btn" type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+        <button type="button" class="btn close" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+  <!-- Modal: Options -->
+
+    <div class="col-8 container">
+      <button class="btn" id="start-new-game">Start New Game</button>
+      <button class="btn" id="games-played">Games Played</button>
+      <div class="row h-100 w-100 board" id="gamearea">
+          <div class="col-4 box cell" data-index="0"></div>
+          <div class="col-4 box cell" data-index="1"></div>
+          <div class="col-4 box cell" data-index="2"></div>
+          <div class="col-4 box cell" data-index="3"></div>
+          <div class="col-4 box cell" data-index="4"></div>
+          <div class="col-4 box cell" data-index="5"></div>
+          <div class="col-4 box cell" data-index="6"></div>
+          <div class="col-4 box cell" data-index="7"></div>
+          <div class="col-4 box cell" data-index="8"></div>
+      </div>
+    </div>
+  </div>
+
+
+      <div id="unauthenticated">
+        <div class="">Click here to Sign Up!<br />
+          <!-- Opens Modal -->
+            <button type="button" class="btn" data-toggle="modal" data-target="#sign-up-modal">Sign Up!</button>
+          <!-- The Modal -->
+            <div class="modal" id="sign-up-modal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+          <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Sign Up Here</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+          <!-- Modal body -->
+            <div class="modal-body">
+              <p id="modal-message1"></p>
+              <form id="sign-up">
+                <input name="credentials[email]" type="text" placeholder="your email here">
+                <input name="credentials[password]" type="text" placeholder="your password here">
+                <input name="credentials[password_confirmation]" placeholder="retype password" type="password">
+                <button class="btn">Submit</button>
+              </form>
+            </div>
+          <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+
+          <div>Sign In Here:
+            <form id="sign-in">
+              <input name="credentials[email]" type="text" placeholder="your email here"><br />
+              <input name="credentials[password]" type="password" placeholder="your password here"><br />
+                <button class="btn" type="submit">Sign In!</button>
+            </form>
+          </div>
+      </div>
+    </div>
+
+
+</body>
+</html>
