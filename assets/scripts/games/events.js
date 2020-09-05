@@ -13,9 +13,7 @@ const createNewGame = function (event) {
 const createNextGame = function (event) {
   event.preventDefault()
   // Create New Board when clicked
-  api.nextGame()
-    .then(ui.nextGameSuccess)
-    .catch(ui.nextGameFailure)
+  ui.nextGameSuccess()
 }
 
 const onSelect = function (event) {

@@ -1,6 +1,8 @@
 const store = require('../store')
 store.counter = 0
 
+// Update so that when game is over, and box that is clicked is occupied, Game Over is sent to user as a message.
+
 const newGameSuccess = function (response) {
   store.game = response.game
   store.player = 'X'
@@ -89,6 +91,8 @@ const clickSuccess = function (response) {
       }
     }
     gameLogic(response)
+  } else {
+    $('#message').text('Game Over! How \'bout another?')
   }
 }
 
@@ -104,10 +108,6 @@ const nextGameSuccess = function (response) {
   $('.cell').empty()
 }
 
-const nextGameFailure = function () {
-  $('#message').text('try again.')
-}
-
 const howManySuccess = function (response) {
   $('#message').text(`You have played ${response.games.length}`)
 }
@@ -116,7 +116,6 @@ module.exports = {
   newGameSuccess,
   newGameFailure,
   nextGameSuccess,
-  nextGameFailure,
   howManySuccess,
   clickSuccess,
   clickFailure

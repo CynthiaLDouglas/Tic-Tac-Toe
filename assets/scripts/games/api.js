@@ -11,15 +11,7 @@ const newGame = function () {
   })
 }
 
-const nextGame = function () {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
+// Removed nextGame API call. This was doubling the number of games played when Start New Game button was clicked.
 
 const onClick = function (index, value) {
   return $.ajax({
@@ -52,7 +44,6 @@ const howMany = function () {
 
 module.exports = {
   newGame,
-  nextGame,
   howMany,
   onClick
 }
